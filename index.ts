@@ -3,7 +3,6 @@ import * as utils from "./lib/utils"
 
 const BASE_URL = `https://api.worldweatheronline.com/premium/v1/weather.ashx`
 
-const API_KEY = "2f350f8566494a638b390456191803"
 
 const getWeather = async function(
   locationName?: string,
@@ -22,8 +21,6 @@ const getWeather = async function(
     throw new Error("Either location name or postal code should be provided")
   }
 
-  console.log(API_KEY)
-
   const queryString = utils.makeQueryString({
     key: API_KEY,
     q: searchTerm,
@@ -34,7 +31,6 @@ const getWeather = async function(
     showlocaltime: "yes",
   })
   const url = `${BASE_URL}${queryString}`
-  console.log(url)
   const response = await get(url)
   const {
     data: {
