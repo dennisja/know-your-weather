@@ -14,8 +14,6 @@
     "typescript": "^3.3.3333"
   },
   "scripts": {
-    "start": "parcel --target=node index.ts",
-    "lint": "eslint .",
-    "format": "prettier"
+    "start": "parcel --target=node index.ts"
   }
 }
