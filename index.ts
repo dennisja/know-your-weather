@@ -17,7 +17,7 @@ const getWeather = async function(
     ? utils.formatLocationName(locationName)
     : postalCode
 
-  //   const { API_KEY } = process.env
+  const { API_KEY } = process.env as { API_KEY: string }
   if (!API_KEY) {
     throw new Error("Either location name or postal code should be provided")
   }
