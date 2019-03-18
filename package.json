@@ -1,0 +1,13 @@
+{
+  "name": "time-and-weather",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.2",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "start": "parcel --target=node index.ts"
+  }
+}
