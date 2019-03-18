@@ -11,8 +11,8 @@ export interface QueryStringObject {
 export interface WeatherAPIData {
   type: string
   query: string
-  weatherDesc: Array<{ value: string }>
-  weatherIconUrl: Array<{ value: string }>
+  weatherDesc: { value: string }[]
+  weatherIconUrl: { value: string }[]
   temp_C: string
   temp_F: string
   windspeedKmph: string
@@ -49,9 +49,9 @@ export const makeQueryString = (
   queryStringObject: QueryStringObject,
 ): string => {
   return Object.entries(queryStringObject).reduce(
-    (fullQueryString, currentKeyValuePair) => {
+    (fullQueryString, currentKeyValuePair): string => {
       const [key, value]: [string, string] = currentKeyValuePair
-      const isFirstKeyValuePair: boolean = !fullQueryString
+      const isFirstKeyValuePair: boolean = !Boolean(fullQueryString)
       if (isFirstKeyValuePair) {
         return `?${key}=${value}`
       }

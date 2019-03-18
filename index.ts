@@ -17,10 +17,12 @@ const getWeather = async function(
     ? utils.formatLocationName(locationName)
     : postalCode
 
-  const { API_KEY } = process.env as { API_KEY: string }
+  const { API_KEY } = process.env;
   if (!API_KEY) {
     throw new Error("Either location name or postal code should be provided")
   }
+
+  console.log(API_KEY)
 
   const queryString = utils.makeQueryString({
     key: API_KEY,
@@ -32,6 +34,7 @@ const getWeather = async function(
     showlocaltime: "yes",
   })
   const url = `${BASE_URL}${queryString}`
+  console.log(url)
   const response = await get(url)
   const {
     data: {
@@ -51,7 +54,7 @@ async function run(): Promise<void> {
   try {
     const kampalaWeather = await getWeather("Kampala")
     const sanFranciscoWeather = await getWeather("San Francisco, CA")
-    const zip94111Weather = await getWeather(undefined, '94111')
+    const zip94111Weather = await getWeather(undefined, "94111")
 
     console.log({
       kampalaWeather,
