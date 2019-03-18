@@ -14,8 +14,8 @@
     "typescript": "^3.3.3333"
   },
   "scripts": {
-    "pre-start": "parcel --target=node index.ts",
-    "start": "node dist"
+    "build": "parcel --target=node index.ts",
+    "run-app": "node dist"
   },
   "dependencies": {
     "axios": "^0.18.0"

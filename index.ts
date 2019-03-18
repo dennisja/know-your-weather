@@ -3,7 +3,6 @@ import * as utils from "./lib/utils"
 
 const BASE_URL = `https://api.worldweatheronline.com/premium/v1/weather.ashx`
 
-
 const getWeather = async function(
   locationName?: string,
   postalCode?: string,
@@ -16,9 +15,9 @@ const getWeather = async function(
     ? utils.formatLocationName(locationName)
     : postalCode
 
-  const { API_KEY } = process.env;
+  const { API_KEY } = process.env
   if (!API_KEY) {
-    throw new Error("Either location name or postal code should be provided")
+    throw new Error("API_KEY environment variable not set")
   }
 
   const queryString = utils.makeQueryString({
