@@ -1,8 +1,8 @@
 # know-your-weather
 
-Shows weather of an area searched by city or zipcode (postal code)
-Currently hardcoded to print weather details of Kampala, SanFrancisco and 94111 to the console
-For example:-
+Shows weather of an area searched by city or zipcode (postal code).
+Currently hard coded to print weather details of Kampala, SanFrancisco and 94111 to the console.
+See sample response below:-
 
 ```js
 { kampalaWeather:
