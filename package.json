@@ -15,5 +15,8 @@
   },
   "scripts": {
     "start": "parcel --target=node index.ts"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
   }
 }
