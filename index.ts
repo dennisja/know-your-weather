@@ -8,7 +8,7 @@ const API_KEY = "2f350f8566494a638b390456191803"
 const getWeather = async function(
   locationName?: string,
   postalCode?: string,
-): utils.FormattedWeatherData {
+): Promise<utils.FormattedWeatherData> {
   if (!locationName && !postalCode) {
     throw new Error("Either location name or postal code should be provided")
   }
@@ -47,11 +47,11 @@ const getWeather = async function(
   })
 }
 
-async function run(): void {
+async function run(): Promise<void> {
   try {
     const kampalaWeather = await getWeather("Kampala")
     const sanFranciscoWeather = await getWeather("San Francisco, CA")
-    const zip94111Weather = await getWeather(undefined, 94111)
+    const zip94111Weather = await getWeather(undefined, '94111')
 
     console.log({
       kampalaWeather,
